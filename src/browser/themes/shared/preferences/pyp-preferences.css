@@ -1,0 +1,535 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+@namespace html "http://www.w3.org/1999/xhtml";
+
+.pane-container {
+  margin: auto;
+}
+
+description {
+  margin-top: 0 !important;
+}
+
+@keyframes dialogPopin {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+html|dialog {
+  animation: dialogPopin 0.2s ease-out;
+}
+
+.subcategory {
+  border-top: none !important;
+}
+
+.navigation {
+  padding: 4%;
+  background: var(--zen-colors-tertiary);
+}
+
+groupbox button {
+  border-radius: 5px !important;
+}
+
+groupbox button,
+groupbox menulist {
+  background-color: light-dark(#f1f1f1, #363636);
+  color: light-dark(black, white);
+}
+
+groupbox h2 {
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+#categories > .category {
+  margin-left: 0 !important;
+  min-height: 40px !important;
+  position: relative;
+  padding-inline: 20px !important;
+}
+
+.textbox-search-sign {
+  margin-right: 15px;
+}
+
+.sidebar-footer-list {
+  margin-left: 0 !important;
+}
+
+.category-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Look and feel */
+
+#webAppearanceSettings {
+  margin-bottom: 15px;
+}
+
+#category-pyp-looks > .category-icon {
+  list-style-image: url("chrome://browser/skin/customize.svg");
+}
+
+#pypLooksAndFeelGroup > html|div:last-of-type {
+  margin-top: 15px;
+}
+
+.zen-compact-mode-styles-browser-wrapper {
+  width: 55%;
+  height: 60px;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid var(--zen-colors-border);
+  background: var(--zen-colors-tertiary);
+  position: relative;
+  --zen-compact-mode-styles-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+
+  @media not (prefers-color-scheme: dark) {
+    --zen-compact-mode-styles-shadow: 0 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  }
+
+  box-shadow: var(--zen-compact-mode-styles-shadow);
+
+  padding: 7px;
+
+  &[top] div {
+    width: 100%;
+    background: var(--zen-primary-color);
+    border-radius: 5px;
+    height: 18px;
+    box-shadow: var(--zen-compact-mode-styles-shadow);
+  }
+
+  &[left] div {
+    width: 18px;
+    background: var(--zen-primary-color);
+    border-radius: 5px;
+    height: 100%;
+    box-shadow: var(--zen-compact-mode-styles-shadow);
+  }
+
+  &[both] div {
+    width: 100%;
+    height: 100%;
+    background: var(--zen-colors-secondary);
+    border-radius: 5px;
+    box-shadow: var(--zen-compact-mode-styles-shadow);
+  }
+}
+
+/* Workspace */
+
+#category-pyp-tabs-management > .category-icon {
+  list-style-image: url("chrome://browser/skin/window.svg");
+}
+
+#pypTabsUnloadDelayContainer {
+  display: flex;
+  align-items: center;
+
+  & #pypTabsUnloadDelay {
+    margin-left: auto;
+  }
+}
+
+/* CKS */
+
+#category-pyp-CKS > .category-icon {
+  list-style-image: url("chrome://browser/skin/quickactions.svg");
+}
+
+.pypCKSOption-input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--zen-colors-border);
+  margin-left: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 40%;
+  user-select: none;
+  cursor: text;
+  background: transparent;
+  transition: border-color 0.1s;
+}
+
+.pypCKSOption {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+  & > vbox {
+    width: fit-content;
+    justify-content: end;
+    min-width: 70%;
+
+    & > label {
+      margin-left: auto;
+    }
+  }
+}
+
+.pypCKSOption > label {
+  font-size: 14px;
+  color: light-dark(rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.7));
+  width: 100%;
+}
+
+.pypCKSOption-input.pypCKSOption-input-not-set {
+  color: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+}
+
+.pypCKSOption-input.pypCKSOption-input-editing {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--zen-primary-color);
+}
+
+.pypCKSOption-conflict {
+  color: red;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.pypCKSOption-unsafed {
+  color: light-dark(orange, yellow);
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.pypCKSOption-input.pypCKSOption-input-invalid {
+  border-color: red;
+}
+
+.pypCKSOption-input.pypCKSOption-input-unsafed {
+  border-color: light-dark(orange, yellow);
+}
+
+.pypCKSOption-input.pypCKSOption-input-valid {
+  border-color: green;
+}
+
+#pypCKSOption-wrapper > [data-group] {
+  border-bottom: 1px solid light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Theme builder */
+
+#zen-theme-builder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  background: var(--zen-colors-tertiary);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#zen-theme-builder-color-picker {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  margin-right: 10px;
+  position: relative;
+}
+
+#zen-theme-builder-color-picker-canvas {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#zen-theme-builder-color-picker-deck {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 10px;
+  margin: 10px;
+  background: light-dark(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(15px);
+  border: 2px solid light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+#zen-theme-builder-color-picker-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 4px solid light-dark(white, black);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background: var(--zen-primary-color);
+  transform: translate(-50%, -50%);
+}
+
+/* THemes marketplace */
+
+#category-pyp-marketplace {
+  display: none !important;
+}
+
+#category-pyp-marketplace > .category-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/category-themes.svg");
+}
+
+#zenLayoutList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#zenLayoutList > hbox {
+  display: flex;
+  flex-direction: column;
+  width: min(280px, 100%);
+  min-width: 0;
+}
+
+#zenLayoutList img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Pyp settings shell: full-width professional layout with transparent content. */
+:root {
+  --pyp-settings-rail-width: 300px;
+  --pyp-settings-row-radius: 6px;
+  --pyp-settings-page-padding: clamp(24px, 3vw, 64px);
+  --pyp-settings-column-gap: clamp(32px, 4vw, 76px);
+  --pyp-glass-bg: color-mix(in srgb, var(--zen-colors-secondary), transparent 42%);
+  --pyp-glass-border: color-mix(in srgb, var(--zen-colors-border), transparent 34%);
+}
+
+body,
+html|body,
+#mainPrefPane,
+.pane-container,
+#preferences-body {
+  background: transparent !important;
+}
+
+.main-content {
+  display: grid !important;
+  grid-template-columns: minmax(260px, var(--pyp-settings-rail-width)) minmax(900px, 1fr);
+  column-gap: var(--pyp-settings-column-gap);
+  width: min(calc(100vw - 24px), 1960px);
+  max-width: none !important;
+  margin-inline: auto;
+  padding-inline: var(--pyp-settings-page-padding) !important;
+  padding-block: 28px 64px !important;
+  box-sizing: border-box;
+}
+
+.navigation {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  min-height: calc(100vh - 48px);
+  padding: 18px 10px !important;
+  border: 1px solid var(--pyp-glass-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--zen-colors-primary), transparent 34%) !important;
+  backdrop-filter: blur(28px) saturate(155%) contrast(112%);
+}
+
+#categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#categories > .category {
+  min-height: 44px !important;
+  padding-inline: 16px 12px !important;
+  border-radius: var(--pyp-settings-row-radius) !important;
+  margin: 0 !important;
+  border-inline-start: 3px solid transparent;
+}
+
+#categories > .category[selected],
+#categories > .category:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent) !important;
+  border-inline-start-color: var(--zen-primary-color);
+}
+
+#mainPrefPane > groupbox,
+.highlighting-group {
+  width: 100% !important;
+  max-width: 1180px !important;
+  box-sizing: border-box;
+  border: 1px solid var(--pyp-glass-border) !important;
+  border-radius: 8px !important;
+  background: var(--pyp-glass-bg) !important;
+  backdrop-filter: blur(30px) saturate(160%) contrast(112%);
+  padding: 24px 28px !important;
+  margin-block: 14px 18px !important;
+  box-shadow: none !important;
+}
+
+.subcategory {
+  width: 100%;
+  max-width: 1180px;
+  margin-block: 28px 10px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.subcategory html|h1,
+#mainPrefPane html|h1 {
+  font-size: 24px !important;
+  font-weight: 650 !important;
+  letter-spacing: 0 !important;
+}
+
+#zenLayoutList {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(210px, 1fr));
+  gap: 16px !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+#zenLayoutList > hbox {
+  width: auto !important;
+  min-height: 196px;
+  padding: 12px !important;
+  border: 1px solid var(--pyp-glass-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 38%);
+  backdrop-filter: blur(20px) saturate(145%);
+}
+
+#zenLayoutList > hbox[selected],
+#zenLayoutList > hbox:hover {
+  background: color-mix(in srgb, var(--zen-primary-color), transparent 76%) !important;
+}
+
+#zenLayoutList img {
+  max-width: none;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#mainPrefPane,
+.pane-container {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+}
+
+#mainPrefPane {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 18px;
+  width: min(100%, 1120px) !important;
+  max-width: 1120px !important;
+}
+
+#mainPrefPane > *,
+#mainPrefPane > vbox,
+#mainPrefPane > hbox,
+#mainPrefPane > html|section,
+#mainPrefPane > groupbox,
+#mainPrefPane > deck,
+#mainPrefPane > stack,
+#mainPrefPane richlistbox,
+#mainPrefPane .content-blocking-category,
+#mainPrefPane .info-box-container,
+#mainPrefPane .homepage-group,
+#mainPrefPane .extension-controlled,
+#mainPrefPane .subcategory {
+  max-width: none !important;
+}
+
+#mainPrefPane > groupbox,
+#mainPrefPane > vbox:not([hidden="true"]),
+#mainPrefPane > hbox:not([hidden="true"]),
+.highlighting-group {
+  min-width: 0 !important;
+}
+
+#mainPrefPane > groupbox,
+.highlighting-group,
+#pypVerticalTabsGroup,
+#pypThemeGroup,
+#pypGlanceGroup,
+#pypUrlbarGroup,
+#pypWorkspacesGroup,
+#pypPinnedTabsManagerGroup,
+#pypCKSGroup {
+  align-self: stretch !important;
+  width: min(100%, 980px) !important;
+  max-width: 980px !important;
+}
+
+#pypVerticalTabsGroup #zenLayoutList {
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  overflow: visible !important;
+}
+
+#pypVerticalTabsGroup #zenLayoutList > hbox {
+  min-height: 164px;
+}
+
+#mainPrefPane description,
+#mainPrefPane label,
+#mainPrefPane checkbox,
+#mainPrefPane radio,
+#mainPrefPane menulist,
+#mainPrefPane button {
+  max-width: 100% !important;
+}
+
+search-textbox,
+html|input[type="search"],
+input[type="text"] {
+  min-height: 36px !important;
+  border-radius: 8px !important;
+  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 36%) !important;
+  backdrop-filter: blur(16px) saturate(135%);
+}
+
+@media (max-width: 860px) {
+  .main-content {
+    display: block !important;
+    padding-inline: 12px;
+  }
+
+  #mainPrefPane {
+    display: block !important;
+  }
+
+  .navigation {
+    position: static;
+    min-height: 0;
+    border-inline-end: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--zen-colors-border), transparent 35%);
+    margin-bottom: 16px;
+  }
+}

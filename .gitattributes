@@ -1,0 +1,7 @@
+# PypBrowser repository language hints.
+
+*.patch linguist-language=C++
+*.d.ts linguist-language=TypeScript
+
+src/pyp/tests/*.js linguist-language=Test
+src/zen/tests/*.js linguist-language=Test
