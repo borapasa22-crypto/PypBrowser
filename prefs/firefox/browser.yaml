@@ -3,7 +3,16 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 - name: browser.startup.page
-  value: 3
+  value: 1
+
+- name: browser.startup.homepage
+  value: "https://pypbrowser.pages.dev/"
+
+- name: startup.homepage_welcome_url
+  value: "https://pypbrowser.pages.dev/"
+
+- name: startup.homepage_welcome_url.additional
+  value: ""
 
 - name: browser.sessionstore.restore_pinned_tabs_on_demand
   value: true

@@ -334,7 +334,7 @@ html|body,
 
 .main-content {
   display: grid !important;
-  grid-template-columns: minmax(260px, var(--pyp-settings-rail-width)) minmax(900px, 1fr);
+  grid-template-columns: minmax(280px, var(--pyp-settings-rail-width)) minmax(980px, 1fr);
   column-gap: var(--pyp-settings-column-gap);
   width: min(calc(100vw - 24px), 1960px);
   max-width: none !important;
@@ -443,12 +443,12 @@ html|body,
 }
 
 #mainPrefPane {
-  display: flex !important;
-  flex-direction: column !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)) !important;
   align-items: stretch !important;
-  gap: 18px;
-  width: min(100%, 1120px) !important;
-  max-width: 1120px !important;
+  gap: 22px 26px !important;
+  width: min(100%, 1420px) !important;
+  max-width: 1420px !important;
 }
 
 #mainPrefPane > *,
@@ -484,8 +484,20 @@ html|body,
 #pypPinnedTabsManagerGroup,
 #pypCKSGroup {
   align-self: stretch !important;
-  width: min(100%, 980px) !important;
-  max-width: 980px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#mainPrefPane > .subcategory,
+#mainPrefPane > hbox.subcategory,
+#mainPrefPane > vbox.subcategory,
+#mainPrefPane > html|h1,
+#mainPrefPane > html|section,
+#mainPrefPane > deck,
+#mainPrefPane > stack,
+#mainPrefPane > separator,
+#mainPrefPane > description {
+  grid-column: 1 / -1 !important;
 }
 
 #pypVerticalTabsGroup #zenLayoutList {
@@ -504,6 +516,27 @@ html|body,
 #mainPrefPane menulist,
 #mainPrefPane button {
   max-width: 100% !important;
+}
+
+#mainPrefPane #defaultBrowserBox,
+#mainPrefPane #isNotDefaultBrowser,
+#mainPrefPane #setDefaultPane,
+#mainPrefPane .default-browser-section,
+#mainPrefPane .default-browser-card {
+  min-width: min(100%, 560px) !important;
+}
+
+#mainPrefPane image[src*="br-set-default"],
+#mainPrefPane img[src*="br-set-default"],
+#mainPrefPane image[src*="fox"],
+#mainPrefPane img[src*="fox"],
+#mainPrefPane .default-browser-image,
+#mainPrefPane .default-browser-card image,
+#mainPrefPane .default-browser-card img {
+  content: url("chrome://browser/skin/zen-icons/pyp-logo.png") !important;
+  width: 112px !important;
+  height: 112px !important;
+  object-fit: contain !important;
 }
 
 search-textbox,
