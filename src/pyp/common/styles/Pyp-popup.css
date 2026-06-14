@@ -488,22 +488,26 @@ window#places {
   background: transparent !important;
 }
 
-/* Pyp Library: compact glass workspace for history, bookmarks, and downloads. */
+/* Pyp Library: full glass workspace for history, bookmarks, and downloads. */
 #places,
 window#places,
 #placesView {
-  --pyp-library-bg: color-mix(in srgb, var(--zen-colors-primary), transparent 36%);
-  --pyp-library-panel: color-mix(in srgb, var(--zen-colors-secondary), transparent 42%);
-  --pyp-library-border: color-mix(in srgb, var(--zen-colors-border), transparent 28%);
+  --pyp-library-bg: color-mix(in srgb, var(--zen-colors-primary), transparent 44%);
+  --pyp-library-panel: color-mix(in srgb, var(--zen-colors-secondary), transparent 52%);
+  --pyp-library-rail: color-mix(in srgb, var(--zen-colors-tertiary), transparent 28%);
+  --pyp-library-border: color-mix(in srgb, var(--zen-colors-border), transparent 18%);
   background: transparent !important;
 }
 
 #placesToolbar {
-  min-height: 64px !important;
-  padding: 10px 14px !important;
+  min-height: 74px !important;
+  padding: 12px 14px !important;
+  border: 0 !important;
   border-bottom: 1px solid var(--pyp-library-border) !important;
-  background: var(--pyp-library-bg) !important;
-  backdrop-filter: blur(28px) saturate(155%) contrast(112%);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--zen-colors-primary), transparent 30%), transparent 62%),
+    var(--pyp-library-bg) !important;
+  backdrop-filter: blur(34px) saturate(165%) contrast(112%);
 }
 
 #placesView,
@@ -512,25 +516,35 @@ window#places,
 #downloadsRichListBox,
 #downloadsListBox {
   background: var(--pyp-library-panel) !important;
-  backdrop-filter: blur(28px) saturate(150%) contrast(110%);
+  backdrop-filter: blur(30px) saturate(150%) contrast(110%);
+}
+
+#placesView {
+  margin: 14px !important;
+  border: 1px solid var(--pyp-library-border) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
 }
 
 #placesList {
-  min-width: 300px !important;
-  padding: 10px !important;
+  min-width: 270px !important;
+  max-width: 270px !important;
+  padding: 14px 10px !important;
+  background: var(--pyp-library-rail) !important;
   border-inline-end: 1px solid var(--pyp-library-border) !important;
 }
 
 #contentAreaDownloadsView {
-  padding: 14px !important;
+  padding: 18px !important;
 }
 
 #placesList treechildren::-moz-tree-row,
 #downloadsRichListBox > richlistitem,
 #downloadsListBox > richlistitem {
-  min-height: 44px !important;
-  margin: 4px 6px !important;
-  border-radius: 8px !important;
+  min-height: 48px !important;
+  margin: 5px 6px !important;
+  border-radius: 6px !important;
+  border: 1px solid transparent !important;
 }
 
 #placesList treechildren::-moz-tree-row(selected),
@@ -539,12 +553,14 @@ window#places,
 #downloadsRichListBox > richlistitem:hover,
 #downloadsListBox > richlistitem:hover {
   background: color-mix(in srgb, currentColor 12%, transparent) !important;
+  border-color: var(--pyp-library-border) !important;
 }
 
 #searchFilter,
 #placesSearchBox {
-  min-height: 38px !important;
-  border-radius: 8px !important;
-  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 32%) !important;
+  min-height: 42px !important;
+  border-radius: 7px !important;
+  border: 1px solid var(--pyp-library-border) !important;
+  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 38%) !important;
   backdrop-filter: blur(18px) saturate(135%);
 }

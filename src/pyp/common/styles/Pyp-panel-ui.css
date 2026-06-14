@@ -57,7 +57,7 @@ panel[type="arrow"]:not(#feature-callout) {
   }
 }
 
-/* Keep downloads/library glassy across platforms. */
+/* Pyp downloads and Library surfaces: compact glass, clearly not stock Firefox. */
 #downloadsPanel,
 #downloadsPanel-multiView,
 #downloadsPanel-mainView,
@@ -70,15 +70,17 @@ panel[type="arrow"]:not(#feature-callout) {
 #contentAreaDownloadsView,
 window#places {
   background: transparent !important;
-  --panel-background: color-mix(in srgb, var(--arrowpanel-background), transparent 22%) !important;
-  backdrop-filter: blur(18px) saturate(120%);
+  --panel-background: color-mix(in srgb, var(--arrowpanel-background), transparent 34%) !important;
+  backdrop-filter: blur(24px) saturate(135%);
 }
 
 #downloadsPanel-mainView,
 #downloadsPanel-multiView {
-  --panel-background: color-mix(in srgb, var(--arrowpanel-background), transparent 34%) !important;
+  min-width: 420px !important;
+  --panel-background: color-mix(in srgb, var(--arrowpanel-background), transparent 46%) !important;
   border-radius: 8px !important;
-  backdrop-filter: blur(28px) saturate(155%) contrast(112%);
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent) !important;
+  backdrop-filter: blur(32px) saturate(160%) contrast(112%);
 }
 
 #downloadsListBox,
@@ -89,12 +91,23 @@ window#places {
 }
 
 #downloadsListBox > richlistitem {
-  min-height: 42px !important;
-  border-radius: 8px !important;
-  margin: 4px 8px !important;
+  min-height: 58px !important;
+  border-radius: 6px !important;
+  margin: 7px 10px !important;
+  border: 1px solid color-mix(in srgb, currentColor 10%, transparent) !important;
+  background: color-mix(in srgb, var(--arrowpanel-background), transparent 38%) !important;
 }
 
 #downloadsListBox > richlistitem:hover,
 #downloadsListBox > richlistitem[selected] {
-  background: color-mix(in srgb, currentColor 10%, transparent) !important;
+  background: color-mix(in srgb, currentColor 12%, transparent) !important;
+}
+
+#downloadsFooter {
+  border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent) !important;
+  padding: 10px !important;
+}
+
+#downloadsFooterButtons {
+  padding: 4px !important;
 }
