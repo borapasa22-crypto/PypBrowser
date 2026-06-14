@@ -46,12 +46,12 @@ const globalActionsTemplate = [
   {
     label: "Settings",
     command: window => window.openPreferences(),
-    icon: "chrome://browser/skin/zen-icons/settings.svg",
+    icon: "chrome://browser/skin/zen-icons/pyp-logo.png",
   },
   {
     label: "Open Private Window",
     command: "Tools:PrivateBrowsing",
-    icon: "chrome://browser/skin/zen-icons/private-window.svg",
+    icon: "chrome://browser/skin/zen-icons/pyp-logo.png",
   },
   {
     label: "Open New Window",

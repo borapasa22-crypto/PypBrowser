@@ -335,7 +335,7 @@ groupbox h2 {
     transform: translate(-50%, -50%);
     width: 15px;
     height: 15px;
-    background-image: url("chrome://global/skin/icons/settings.svg");
+    background-image: url("chrome://browser/skin/zen-icons/pyp-logo.png");
     background-repeat: no-repeat;
     background-size: cover;
   }

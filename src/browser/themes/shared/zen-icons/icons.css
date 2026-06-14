@@ -243,7 +243,7 @@
 #appMenu-settings-button,
 #PanelUI-zen-profiles-managePrfs,
 .unified-extensions-item-open-menu.subviewbutton {
-  list-style-image: url("settings.svg") !important;
+  list-style-image: url("pyp-logo.png") !important;
 }
 
 #spell-check-enabled {
@@ -495,12 +495,12 @@
 .tab-icon-image[src="chrome://branding/content/icon32.png"],
 .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"]
 {
-  content: url("new-tab-image.svg") !important;
+  content: url("pyp-logo.png") !important;
 }
 
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"]
 {
-  content: url("settings.svg") !important;
+  content: url("pyp-logo.png") !important;
 }
 
 .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"]
