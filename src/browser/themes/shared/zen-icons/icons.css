@@ -503,7 +503,7 @@
 
 .tab-icon-image[src="chrome://global/skin/icons/settings.svg"]
 {
-  content: url("pyp-logo.png") !important;
+  content: url("settings.svg") !important;
 }
 
 .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"]

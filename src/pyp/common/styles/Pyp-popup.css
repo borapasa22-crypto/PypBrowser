@@ -445,6 +445,34 @@ panel::part(content) {
   border: 1px solid color-mix(in srgb, var(--panel-border-color), transparent 20%) !important;
 }
 
+#appMenu-popup .subviewbutton,
+#PanelUI-mainView .subviewbutton {
+  margin: 2px 8px !important;
+  border-radius: 6px !important;
+}
+
+#appMenu-popup .subviewbutton > .toolbarbutton-icon,
+#appMenu-popup .subviewbutton > image,
+#appMenu-popup menuitem > image,
+#appMenu-popup menu > image {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  object-fit: contain !important;
+}
+
+#appMenu-settings-button {
+  list-style-image: url("chrome://global/skin/icons/settings.svg") !important;
+}
+
+#appMenu-settings-button > .toolbarbutton-icon,
+#appMenu-more-button2 > .toolbarbutton-icon,
+#appmenu-moreTools-button > .toolbarbutton-icon {
+  content: unset !important;
+  padding: 0 !important;
+}
+
 .subviewbutton,
 menuitem,
 menu {
@@ -500,12 +528,12 @@ window#places,
 }
 
 #placesToolbar {
-  min-height: 74px !important;
-  padding: 12px 14px !important;
+  min-height: 68px !important;
+  padding: 10px 14px !important;
   border: 0 !important;
   border-bottom: 1px solid var(--pyp-library-border) !important;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--zen-colors-primary), transparent 30%), transparent 62%),
+    linear-gradient(90deg, color-mix(in srgb, var(--zen-colors-primary), transparent 44%), transparent 70%),
     var(--pyp-library-bg) !important;
   backdrop-filter: blur(34px) saturate(165%) contrast(112%);
 }
@@ -520,22 +548,23 @@ window#places,
 }
 
 #placesView {
-  margin: 14px !important;
+  margin: 18px !important;
   border: 1px solid var(--pyp-library-border) !important;
   border-radius: 8px !important;
+  box-shadow: 0 18px 42px rgb(0 0 0 / 30%) !important;
   overflow: hidden !important;
 }
 
 #placesList {
-  min-width: 270px !important;
-  max-width: 270px !important;
-  padding: 14px 10px !important;
-  background: var(--pyp-library-rail) !important;
+  min-width: 230px !important;
+  max-width: 230px !important;
+  padding: 18px 12px !important;
+  background: color-mix(in srgb, var(--pyp-library-rail), transparent 18%) !important;
   border-inline-end: 1px solid var(--pyp-library-border) !important;
 }
 
 #contentAreaDownloadsView {
-  padding: 18px !important;
+  padding: 24px !important;
 }
 
 #placesList treechildren::-moz-tree-row,
@@ -561,6 +590,6 @@ window#places,
   min-height: 42px !important;
   border-radius: 7px !important;
   border: 1px solid var(--pyp-library-border) !important;
-  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 38%) !important;
-  backdrop-filter: blur(18px) saturate(135%);
+  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 58%) !important;
+  backdrop-filter: blur(20px) saturate(150%);
 }
