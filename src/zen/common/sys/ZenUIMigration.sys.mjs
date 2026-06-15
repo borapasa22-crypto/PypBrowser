@@ -143,7 +143,7 @@ class nsZenUIMigration {
         // User has clicked on "Learn More"
         if (buttonPressed === 0) {
           win.openTrustedLinkIn(
-            "https://docs.zen-browser.app/user-manual/window-sync",
+            "https://pypbrowser.pages.dev/docs/window-sync",
             "tab"
           );
         }

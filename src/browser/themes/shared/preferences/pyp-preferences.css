@@ -383,7 +383,7 @@ html|body,
 #categories > .category[selected],
 #categories > .category:hover {
   background: color-mix(in srgb, currentColor 10%, transparent) !important;
-  border-inline-start-color: var(--zen-primary-color);
+  border-inline-start-color: color-mix(in srgb, currentColor 42%, transparent) !important;
 }
 
 #mainPrefPane > groupbox,
@@ -435,7 +435,9 @@ html|body,
 
 #zenLayoutList > hbox[selected],
 #zenLayoutList > hbox:hover {
-  background: color-mix(in srgb, var(--zen-primary-color), transparent 76%) !important;
+  background: color-mix(in srgb, currentColor 8%, transparent) !important;
+  border-color: color-mix(in srgb, currentColor 22%, transparent) !important;
+  box-shadow: none !important;
 }
 
 #zenLayoutList img {
@@ -514,6 +516,41 @@ html|body,
 #mainPrefPane menulist,
 #mainPrefPane button {
   max-width: 100% !important;
+}
+
+#pypVerticalTabsGroup,
+#pypThemeGroup,
+#pypGlanceGroup,
+#pypUrlbarGroup,
+#pypWorkspacesGroup,
+#pypPinnedTabsManagerGroup,
+#pypCKSGroup,
+#zenVerticalTabsGroup,
+#zenThemeGroup,
+#zenGlanceGroup,
+#zenUrlbarGroup,
+#zenWorkspacesGroup,
+#zenPinnedTabsManagerGroup,
+#zenCKSGroup,
+.highlighting-group {
+  background: color-mix(in srgb, var(--zen-colors-primary), transparent 24%) !important;
+  border-color: color-mix(in srgb, currentColor 14%, transparent) !important;
+  box-shadow: none !important;
+}
+
+#zenLayoutList > hbox,
+#zenLayoutList > hbox[selected],
+#zenLayoutList > hbox:hover,
+.zen-compact-mode-styles-browser-wrapper {
+  background: color-mix(in srgb, var(--zen-colors-tertiary), transparent 42%) !important;
+  border-color: color-mix(in srgb, currentColor 16%, transparent) !important;
+  box-shadow: none !important;
+}
+
+.zen-compact-mode-styles-browser-wrapper[top] div,
+.zen-compact-mode-styles-browser-wrapper[left] div {
+  background: color-mix(in srgb, currentColor 18%, transparent) !important;
+  box-shadow: none !important;
 }
 
 search-textbox,
