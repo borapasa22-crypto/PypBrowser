@@ -35,4 +35,4 @@
 # Do not edit manually
 - name: zen.view.compact.enable-at-startup
   hidden: true
-  value: true
+  value: false

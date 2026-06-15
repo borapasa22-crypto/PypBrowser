@@ -644,6 +644,49 @@ var gZenMarketplaceManager = {
 
 const kZenExtendedSidebar = "zen.view.sidebar-expanded";
 const kZenSingleToolbar = "zen.view.use-single-toolbar";
+const kPypLowResourceMode = "pyp.performance.low-resource-mode";
+
+const PYP_LOW_RESOURCE_PREFS = [
+  ["zen.view.compact.animate-sidebar", "bool", false, true],
+  ["zen.view.enable-loading-indicator", "bool", false, true],
+  ["toolkit.cosmeticAnimations.enabled", "bool", false, true],
+  ["zen.glance.enabled", "bool", false, true],
+  ["zen.mediacontrols.enabled", "bool", false, true],
+  ["network.predictor.enabled", "bool", false, true],
+  ["network.dns.disablePrefetch", "bool", true, false],
+  ["browser.sessionstore.interval", "int", 60000, 15000],
+  ["media.autoplay.default", "int", 5, 0],
+];
+
+var gPypPerformanceSettings = {
+  init() {
+    if (this.__hasInitialized) {
+      return;
+    }
+    this.__hasInitialized = true;
+    Services.prefs.addObserver(kPypLowResourceMode, this);
+    window.addEventListener("unload", () => {
+      Services.prefs.removeObserver(kPypLowResourceMode, this);
+    });
+    this.apply();
+  },
+
+  observe() {
+    this.apply();
+  },
+
+  apply() {
+    const enabled = Services.prefs.getBoolPref(kPypLowResourceMode, false);
+    for (const [pref, type, enabledValue, balancedValue] of PYP_LOW_RESOURCE_PREFS) {
+      const value = enabled ? enabledValue : balancedValue;
+      if (type == "bool") {
+        Services.prefs.setBoolPref(pref, value);
+      } else if (type == "int") {
+        Services.prefs.setIntPref(pref, value);
+      }
+    }
+  },
+};
 
 var gZenLooksAndFeel = {
   init() {
@@ -652,6 +695,7 @@ var gZenLooksAndFeel = {
     }
     this.__hasInitialized = true;
     gZenMarketplaceManager.init();
+    gPypPerformanceSettings.init();
     for (const pref of [kZenExtendedSidebar, kZenSingleToolbar]) {
       Services.prefs.addObserver(pref, this);
     }
@@ -1235,9 +1279,19 @@ Preferences.addAll([
     type: "bool",
     default: false,
   },
+  {
+    id: "pyp.performance.low-resource-mode",
+    type: "bool",
+    default: false,
+  },
 ]);
 
 Preferences.addSetting({
   id: "zenWorkspaceContinueWhereLeftOff",
   pref: "zen.workspaces.continue-where-left-off",
+});
+
+Preferences.addSetting({
+  id: "pypLowResourceMode",
+  pref: "pyp.performance.low-resource-mode",
 });

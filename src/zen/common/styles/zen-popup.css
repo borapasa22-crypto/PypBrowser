@@ -420,6 +420,45 @@ menuseparator {
   border: none !important;
 }
 
+/* Pyp menu polish: compact controls and no oversized brand art in command rows. */
+#appMenu-zoom-controls {
+  min-height: 42px !important;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent) !important;
+  border-radius: 8px !important;
+  background: color-mix(in srgb, var(--arrowpanel-background), transparent 38%) !important;
+  padding: 4px 7px !important;
+  margin: 8px 0 6px !important;
+  align-items: center !important;
+}
+
+#appMenu-zoom-controls > .subviewbutton {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 6px !important;
+  justify-content: center !important;
+}
+
+#appMenu-zoom-controls > #appMenu-zoomReset-button2 {
+  width: 64px !important;
+  min-width: 64px !important;
+}
+
+#appMenu-settings-button {
+  list-style-image: url("chrome://global/skin/icons/settings.svg") !important;
+}
+
+#appMenu-settings-button > .toolbarbutton-icon {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  content: unset !important;
+}
+
 .downloadButton {
   padding: 0 !important;
   min-width: unset !important;

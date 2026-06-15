@@ -43,7 +43,7 @@ html|dialog {
 #defaultBrowserBox img,
 #defaultBrowserBox image,
 .default-browser-image {
-  content: url("chrome://browser/content/pyp/PypLogo.png") !important;
+  content: url("chrome://browser/skin/pyp-icons/pyp-logo.png") !important;
   max-width: 92px !important;
   max-height: 92px !important;
   object-fit: contain !important;
@@ -435,8 +435,8 @@ html|body,
 
 #zenLayoutList > hbox[selected],
 #zenLayoutList > hbox:hover {
-  background: color-mix(in srgb, currentColor 8%, transparent) !important;
-  border-color: color-mix(in srgb, currentColor 22%, transparent) !important;
+  background: color-mix(in srgb, currentColor 6%, transparent) !important;
+  border-color: color-mix(in srgb, currentColor 20%, transparent) !important;
   box-shadow: none !important;
 }
 
@@ -579,4 +579,75 @@ input[type="text"] {
     border-bottom: 1px solid color-mix(in srgb, var(--zen-colors-border), transparent 35%);
     margin-bottom: 16px;
   }
+}
+
+/* Final Pyp settings pass: neutral glass, no blue card shells, compact previews. */
+:root {
+  --pyp-neutral-panel: color-mix(in srgb, #24242a, transparent 16%);
+  --pyp-neutral-panel-soft: color-mix(in srgb, #202026, transparent 26%);
+  --pyp-neutral-border: color-mix(in srgb, currentColor 13%, transparent);
+}
+
+#mainPrefPane > groupbox,
+.highlighting-group,
+#zenVerticalTabsGroup,
+#zenThemeGroup,
+#zenGlanceGroup,
+#zenUrlbarGroup,
+#pypVerticalTabsGroup,
+#pypThemeGroup,
+#pypGlanceGroup,
+#pypUrlbarGroup {
+  background: var(--pyp-neutral-panel) !important;
+  border-color: var(--pyp-neutral-border) !important;
+  box-shadow: none !important;
+}
+
+#zenLayoutList,
+#pypVerticalTabsGroup #zenLayoutList {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(170px, 1fr)) !important;
+  gap: 14px !important;
+  overflow: visible !important;
+}
+
+#zenLayoutList > hbox,
+#zenLayoutList > hbox[selected],
+#zenLayoutList > hbox.selected,
+#zenLayoutList > hbox:hover {
+  min-height: 156px !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  background: var(--pyp-neutral-panel-soft) !important;
+  border: 1px solid var(--pyp-neutral-border) !important;
+  outline: none !important;
+}
+
+#zenLayoutList > hbox[selected],
+#zenLayoutList > hbox.selected {
+  border-color: color-mix(in srgb, currentColor 34%, transparent) !important;
+  background: color-mix(in srgb, currentColor 7%, var(--pyp-neutral-panel-soft)) !important;
+}
+
+#zenLayoutList img {
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  object-fit: contain !important;
+  background: color-mix(in srgb, #111114, transparent 18%) !important;
+}
+
+#zenLayoutList label {
+  font-size: 13px !important;
+  line-height: 1.25 !important;
+  margin-top: 8px !important;
+}
+
+#zenThemeGroup separator,
+#pypThemeGroup separator {
+  margin-block: 14px !important;
+}
+
+#zenThemeGroup checkbox,
+#pypThemeGroup checkbox {
+  margin-block: 6px !important;
 }

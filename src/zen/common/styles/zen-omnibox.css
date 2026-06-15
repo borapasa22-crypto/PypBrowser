@@ -738,3 +738,30 @@
     display: none !important;
   }
 }
+
+/* Pyp glass search surface: keep the page visible behind the address UI. */
+#urlbar[breakout-extend="true"] .urlbar-background,
+#urlbar[open] .urlbar-background,
+#urlbar .urlbar-background,
+#searchbar {
+  background-color: color-mix(in srgb, #0f1012, transparent 42%) !important;
+  backdrop-filter: blur(34px) saturate(155%) contrast(112%) !important;
+  border-color: color-mix(in srgb, currentColor 16%, transparent) !important;
+  box-shadow: none !important;
+}
+
+#urlbar[breakout-extend="true"],
+#urlbar[open][zen-floating-urlbar="true"] {
+  --zen-urlbar-background-transparent: color-mix(in srgb, #0f1012, transparent 46%) !important;
+}
+
+.urlbarView,
+.urlbarView-body-inner,
+#urlbar-results {
+  background: transparent !important;
+}
+
+.urlbarView-row[selected],
+.urlbarView-row:hover {
+  background-color: color-mix(in srgb, currentColor 9%, transparent) !important;
+}
