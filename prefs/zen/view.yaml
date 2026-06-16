@@ -65,4 +65,4 @@
   value: 55
 
 - name: zen.view.enable-loading-indicator
-  value: true
+  value: false

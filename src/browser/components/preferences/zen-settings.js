@@ -1282,7 +1282,7 @@ Preferences.addAll([
   {
     id: "pyp.performance.low-resource-mode",
     type: "bool",
-    default: false,
+    default: true,
   },
 ]);
 

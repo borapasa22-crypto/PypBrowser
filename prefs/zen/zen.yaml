@@ -33,13 +33,13 @@
   value: false
 
 - name: zen.mediacontrols.enabled
-  value: true
+  value: false
 
 - name: zen.haptic-feedback.enabled
   value: true
 
 - name: zen.startup.smooth-scroll-in-tabs
-  value: true
+  value: false
 
 - name: zen.tabs.open-pinned-in-new-tab
   value: true
