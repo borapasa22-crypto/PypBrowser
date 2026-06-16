@@ -765,26 +765,3 @@
 .urlbarView-row:hover {
   background-color: color-mix(in srgb, currentColor 9%, transparent) !important;
 }
-
-/* Pyp neutral search repair: translucent address UI without blue/accent outlines. */
-#urlbar .urlbar-background,
-#urlbar[breakout-extend="true"] .urlbar-background,
-#urlbar[open] .urlbar-background,
-#searchbar {
-  background-color: color-mix(in srgb, #101114, transparent 56%) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-#urlbar[focused="true"]:not([suppress-focus-border]) > .urlbar-background,
-#urlbar[open] > .urlbar-background,
-#searchbar:focus-within {
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset !important;
-}
-
-#urlbar[breakout-extend="true"],
-#urlbar[open][zen-floating-urlbar="true"] {
-  --zen-urlbar-background-transparent: color-mix(in srgb, #101114, transparent 58%) !important;
-}
