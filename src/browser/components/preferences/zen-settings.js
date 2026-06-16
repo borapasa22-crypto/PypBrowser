@@ -1245,6 +1245,11 @@ Preferences.addAll([
     default: true,
   },
   {
+    id: "zen.mediacontrols.enabled",
+    type: "bool",
+    default: true,
+  },
+  {
     id: "zen.workspaces.continue-where-left-off",
     type: "bool",
     default: false,
@@ -1294,4 +1299,9 @@ Preferences.addSetting({
 Preferences.addSetting({
   id: "pypLowResourceMode",
   pref: "pyp.performance.low-resource-mode",
+});
+
+Preferences.addSetting({
+  id: "pypMusicViewerControls",
+  pref: "zen.mediacontrols.enabled",
 });
