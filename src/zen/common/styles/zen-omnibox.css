@@ -310,36 +310,6 @@
   }
 }
 
-/* Pyp: make the top search/url surface read like translucent glass. */
-#urlbar,
-#searchbar {
-  --urlbar-box-bgcolor: color-mix(in srgb, #101014 48%, transparent) !important;
-  --urlbar-box-focus-bgcolor: color-mix(in srgb, #101014 38%, transparent) !important;
-  --urlbarView-background-color: color-mix(in srgb, #101014 28%, transparent) !important;
-}
-
-#urlbar:not([breakout-extend="true"]) > .urlbar-background,
-#searchbar {
-  background: color-mix(in srgb, #101014 42%, transparent) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: none !important;
-  backdrop-filter: blur(18px) saturate(130%);
-}
-
-#urlbar:not([breakout-extend="true"]):hover > .urlbar-background,
-#urlbar[focused="true"] > .urlbar-background,
-#searchbar:focus-within {
-  background: color-mix(in srgb, #101014 34%, transparent) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-}
-
-.urlbarView {
-  background: color-mix(in srgb, #101014 42%, transparent) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 20px 60px color-mix(in srgb, black 28%, transparent) !important;
-  backdrop-filter: blur(22px) saturate(135%);
-}
-
 :root[zen-single-toolbar="true"] {
   --urlbar-icon-border-radius: 8px !important;
   --urlbar-inner-border-radius: 6px !important;

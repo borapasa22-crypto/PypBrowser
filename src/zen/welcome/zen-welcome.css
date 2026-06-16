@@ -24,49 +24,6 @@
   }
 }
 
-/* Pyp: first-run setup keeps the small text/arrow start, then uses a distinct glass console. */
-#zen-welcome-start {
-  background:
-    radial-gradient(circle at 18% 20%, color-mix(in srgb, currentColor 8%, transparent), transparent 30%),
-    color-mix(in srgb, #151518 78%, transparent) !important;
-}
-
-#zen-welcome-start #zen-welcome-title {
-  font-size: clamp(2.6rem, 5vw, 4.8rem) !important;
-  letter-spacing: 0 !important;
-}
-
-#zen-welcome-pages {
-  width: min(1120px, 86vw) !important;
-  height: min(680px, 76vh) !important;
-  border-radius: 18px !important;
-  background: color-mix(in srgb, #17171b 70%, transparent) !important;
-  border: 1px solid color-mix(in srgb, currentColor 12%, transparent) !important;
-  box-shadow: 0 30px 90px color-mix(in srgb, black 34%, transparent) !important;
-  backdrop-filter: blur(28px) saturate(150%);
-}
-
-#zen-welcome-pages #zen-welcome-page-sidebar {
-  width: 34% !important;
-  padding: clamp(2rem, 4vw, 3.4rem) !important;
-  background: color-mix(in srgb, currentColor 4%, transparent) !important;
-  border-inline-end: 1px solid color-mix(in srgb, currentColor 10%, transparent);
-}
-
-#zen-welcome-pages #zen-welcome-page-content {
-  width: 66% !important;
-  background: color-mix(in srgb, #09090b 34%, transparent) !important;
-}
-
-#zen-welcome-page-sidebar-content h1 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem) !important;
-}
-
-#zen-welcome-page-sidebar-buttons button {
-  min-height: 44px !important;
-  border-radius: 10px !important;
-}
-
 #zen-welcome-start {
   flex-direction: column;
   -moz-window-dragging: drag;
