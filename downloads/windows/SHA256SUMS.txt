@@ -1,1 +1,1 @@
-01d56bcf56e724bc36ca9e91c523a777062b14c57d3ac49704e4ac8a35d03713 PypBrowser-windows-x64.zip
+90386f65eec19373a6d51ef523ee9ce24a1315983b2c6fc5ade02abf6af85b21  PypBrowser-windows-x64.zip

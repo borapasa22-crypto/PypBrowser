@@ -1,6 +1,6 @@
 {
-  "name": "Zen Browser",
-  "vendor": "Zen OSS Team",
+  "name": "PypBrowser",
+  "vendor": "Bora",
   "appId": "zen",
   "binaryName": "zen",
   "version": {
@@ -16,13 +16,13 @@
   "brands": {
     "release": {
       "backgroundColor": "#282A33",
-      "brandShorterName": "Zen",
-      "brandShortName": "Zen",
-      "brandFullName": "Zen Browser",
+      "brandShorterName": "Pyp",
+      "brandShortName": "Pyp",
+      "brandFullName": "PypBrowser",
       "release": {
         "displayVersion": "1.20b",
         "github": {
-          "repo": "zen-browser/desktop"
+          "repo": "borapasa22-crypto/PypBrowser"
         },
         "archives": {
           "windows": "windows.mar",
@@ -36,13 +36,13 @@
     },
     "twilight": {
       "backgroundColor": "#282A33",
-      "brandShorterName": "Zen",
-      "brandShortName": "Twilight",
-      "brandFullName": "Zen Twilight",
+      "brandShorterName": "Pyp",
+      "brandShortName": "Pyp",
+      "brandFullName": "PypBrowser",
       "release": {
         "displayVersion": "1.21t",
         "github": {
-          "repo": "zen-browser/desktop"
+          "repo": "borapasa22-crypto/PypBrowser"
         }
       }
     }
@@ -53,5 +53,5 @@
     ],
     "licenseType": "MPL-2.0"
   },
-  "updateHostname": "updates.zen-browser.app"
+  "updateHostname": "pypbrowser.pages.dev"
 }
